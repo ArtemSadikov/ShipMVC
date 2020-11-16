@@ -1,5 +1,6 @@
 package sample;
 
+import client.src.ClientThread;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,6 +15,9 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 600, 500));
         primaryStage.setResizable(false);
         primaryStage.show();
+        ClientThread clientThread = new ClientThread();
+        Thread thread = new Thread(clientThread);
+        thread.start();
     }
 
 
